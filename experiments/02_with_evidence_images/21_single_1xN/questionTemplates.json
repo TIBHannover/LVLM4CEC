@@ -1,0 +1,5 @@
+[
+    [0, "Does the red part of the image show the same <type> as the blue part of the image?"],
+    [1, "Does the two images show the same <type>?"],
+    [2, "Is the <type> in the two pictures consistent?"]
+]

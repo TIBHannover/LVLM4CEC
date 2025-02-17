@@ -1,0 +1,9 @@
+[
+    [0, "Is <type> <name> shown in the image?"],
+    [1, "Is <type> <name> visible in the image?"],
+    [2, "Does the image depict the <type> <name>?"],
+    [3, "Is <type> <name> shown in the image? Answer only with yes or no."],
+    [4, "Is <type> <name> visible in the image? Answer only with yes or no."],
+    [5, "Is the content of the image consistent with the <type> <name>?"],
+    [6, "Is any <type> from the image consistent with <name>?"]
+]
