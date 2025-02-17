@@ -4,7 +4,7 @@ import argparse
 import numpy
 import shutil
 
-pathFulldataset = "./_datasets/mmg/subsamples/mmg_locations.jsonl"
+pathFulldataset = "./_datasets/mmg_ent/subsamples/mmg_locations_ent.jsonl"
 
 entityObject = {
         "name": "locations",
@@ -17,7 +17,7 @@ entityObject = {
 def createSubSample():
     open(pathFulldataset, 'w').close()
 
-    with open('./_datasets/mmg/test_dataset.json', 'r') as f:
+    with open('./_datasets/mmg_ent/test_dataset.json', 'r') as f:
         data = json.load(f)
 
     rng = numpy.random.default_rng()
@@ -29,12 +29,12 @@ def createSubSample():
             del data['city'][keyIndex]['body']
             f.write(json.dumps(data['city'][keyIndex]) + "\n")
             id = data['city'][keyIndex]['id']
-            shutil.copyfile(f'/nfs/home/tahmasebzadehg/mmg_news_dataset/image_splits/test/{id}.jpg', f'./_datasets/mmg/images/{id}.jpg')
+            shutil.copyfile(f'/nfs/home/tahmasebzadehg/mmg_news_dataset/image_splits/test/{id}.jpg', f'./_datasets/mmg_ent/images/{id}.jpg')
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 def loadEntities():
-    with open(f"./_datasets/news400/entities/{entityObject['name']}.jsonl", 'r') as file:
+    with open(f"./_datasets/news400_ent/entities/{entityObject['name']}.jsonl", 'r') as file:
         for line in file:
             entityObject['entities'].append(json.loads(line))
 
@@ -68,7 +68,7 @@ def createSingleEntityQuestions(args):
 
 def saveQuestion(args, id, question, entity, testlabel, set, entityID, ground_truth, ground_wrong):
     with open(args.question_file, "a") as outfile:
-        outfile.write("""{\"question_id\": \"%s\", \"image\": \"./_datasets/mmg/images/%s.jpg\", \"question\": %s, \"entity\": \"%s\", \"testlabel\": \"%s\", \"set\": \"%s\", \"entityID\": \"%s\", \"gTruth\": \"%s\", \"gWrong\": \"%s\"} \n""" 
+        outfile.write("""{\"question_id\": \"%s\", \"image\": \"./_datasets/mmg_ent/images/%s.jpg\", \"question\": %s, \"entity\": \"%s\", \"testlabel\": \"%s\", \"set\": \"%s\", \"entityID\": \"%s\", \"gTruth\": \"%s\", \"gWrong\": \"%s\"} \n"""
                       % (id, id, question, entity, testlabel, set, entityID, ground_truth, ground_wrong))
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

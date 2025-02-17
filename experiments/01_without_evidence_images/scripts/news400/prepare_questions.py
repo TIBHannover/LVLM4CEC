@@ -24,7 +24,7 @@ entityObjects = [
 
 def loadEntities():
     for entityObject in entityObjects:
-        with open(f"./_datasets/news400/entities/{entityObject['name']}.jsonl", 'r') as file:
+        with open(f"./_datasets/news400_ent/entities/{entityObject['name']}.jsonl", 'r') as file:
             for line in file:
                 entityObject['entities'].append(json.loads(line))
 
@@ -36,7 +36,7 @@ def extractNameById(id, entities):
             return str(entity['wd_label']).replace("\"", "'").replace("'", "").lower()
 
 def createSingleEntityQuestions(args):
-    with open(f"./_datasets/news400/news400_merged.jsonl", 'r') as file:
+    with open(f"./_datasets/news400_ent/news400_ent.jsonl", 'r') as file:
         for line in file:
             # extract line
             lineObject = json.loads(line)
