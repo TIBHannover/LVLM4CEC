@@ -1,4 +1,4 @@
-# 1. Verifying Cross-modal Entity Consistency in News using Vision-language Models
+#  Verifying Cross-modal Entity Consistency in News using Vision-language Models
 This repository is the official implementation of [Verifying Cross-modal Entity Consistency in News using Vision-language Models](https://arxiv.org/abs/2501.11403) published in ECIR 2025.
 
 Please use the following citation:
@@ -50,27 +50,15 @@ Contains all logs from fulltest (SLURM log)
 - statistics
     Contains a statistic for each model and mode, seperated by  experiment and datatset
 
-## Credit
-This repository is built by [Sahar Tahmasebi](https://github.com/sahartahmasebi). 
-
-## Contributing
-
-Our work is licenced under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). This project includes tamperedNews and news400 data that is licensed under the [CC BY 3.0] by [Eric Müller-Budack](https://data.uni-hannover.de/dataset/tamperednews-news400-ijmir21). The original data has been modified to suit the needs of this project.
-
-
-
-
-
-## 3. Reproduce Results
 The experiments can be run by the following command
 <path_to_experiment>/run_<dataset>.sh <basepath_to_experiment> <generate_questions> <generate_answers>
 
 To run all all experiments with SLURM, look at ./utils/batch_fulltest.sh
 
 
-## 4. streamlit Demo
-Demo is created with [streamlit](https://streamlit.io/) and allows to examine results/answers of each model for each question/ data sample. It also contains the answers of the Baseline project [Link](https://github.com/TIBHannover/cross-modal_entity_consistency)
-It can be run with the following command: 
-- streamlit run app.py
-- python -m streamlit run ./streamlitDemo/app.py
-- ssh -N -f -L localhost:8501:localhost:8501 devbox5
+## Credit
+This repository is built by [Sahar Tahmasebi](https://github.com/sahartahmasebi). 
+
+## Contributing
+
+Our work is licenced under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). This project includes tamperedNews and news400 data that is licensed under the [CC BY 3.0] by [Eric Müller-Budack](https://data.uni-hannover.de/dataset/tamperednews-news400-ijmir21). The original data has been modified to suit the needs of this project.
