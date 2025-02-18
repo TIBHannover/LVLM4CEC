@@ -20,7 +20,7 @@ conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit
 pip install -r requirements.txt
 ```
 ## Datasets
-- The fully annotated datasets used in this work, including images, can be downloaded here: [TamperedNews-Ent & News400_Ent & MMG-Ent]
+- The fully annotated datasets used in this work, including images, can be found in _dataset directory.
 - To access the original TamperedNews and News400 datasets with their corresponding images, visit: [TamperedNews & News400 Dataset](https://data.uni-hannover.de/dataset/tamperednews-news400-ijmir21)
 - To access the original MMG dataset along with its images, visit: [MMG Dataset](https://link.springer.com/chapter/10.1007/978-3-031-28238-6_14)
 
