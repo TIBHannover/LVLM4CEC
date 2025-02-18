@@ -20,27 +20,27 @@ conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit
 pip install -r requirements.txt
 ```
 ## Datasets
-- You can download the full annotated datasets of this work with images here : TODO
-- To access the original dataset of TamperedNews and News400 with their images use this [link](https://data.uni-hannover.de/dataset/tamperednews-news400-ijmir21)
-- To access the original MMG dataset with its images use this [link](https://link.springer.com/chapter/10.1007/978-3-031-28238-6_14).
+- The fully annotated datasets used in this work, including images, can be downloaded here: [TamperedNews-Ent & News400_Ent & MMG-Ent]
+- To access the original TamperedNews and News400 datasets with their corresponding images, visit: [TamperedNews & News400 Dataset](https://data.uni-hannover.de/dataset/tamperednews-news400-ijmir21)
+- To access the original MMG dataset along with its images, visit: [MMG Dataset](https://link.springer.com/chapter/10.1007/978-3-031-28238-6_14)
 
 ## Evaluation
-Each experiment contains its own script to analyze the answers. To run the pipeline and evaluate on datasets, you should run the bash file specific to each experiment and dataset with following commands.:
+Each experiment includes a dedicated script for analyzing the generated answers. To run the pipeline and evaluate on different datasets, execute the corresponding bash script for the specific experiment and dataset using the following command:
 ```
 <path_to_experiment>/run_<dataset_name>.sh <basepath_to_experiment> <generate_questions_flag> <generate_answers_flag>
 ```
-for example to run the pipeline on news400_ent dataset without using the evidence images you should run:
+For example, to run the pipeline on the ```news400_ent``` dataset without incorporating evidence images, use:
 ```
 LVLM4CEC/01_without_evidence_images/run_news400.sh LVLM4CEC/01_without_evidence_images/ 1 1
 ```
 
-All generated output will be then saved in ./output directory. you can then print the results for specific model by running PrintResults.py
-1.5. output
-All generated output is saved in ./output. 
-
+All generated outputs will be saved in the ```./output directory```. To display the results for a specific model, run:
+```
+python PrintResults.py
+```
 ## Credit
 This repository is built by [Sahar Tahmasebi](https://github.com/sahartahmasebi). 
 
 ## Contributing
 
-Our work is licenced under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). This project includes tamperedNews and news400 data that is licensed under the [CC BY 3.0] by [Eric Müller-Budack](https://data.uni-hannover.de/dataset/tamperednews-news400-ijmir21). The original data has been modified to suit the needs of this project.
+Our work is licenced under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). It includes tamperedNews and news400 datasets which are licensed under [CC BY 3.0] by [Eric Müller-Budack](https://data.uni-hannover.de/dataset/tamperednews-news400-ijmir21). The original datasets have been modified to align with the requirements of this project.
