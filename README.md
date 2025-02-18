@@ -3,7 +3,7 @@ This repository is the official implementation of [Verifying Cross-modal Entity 
 
 Please use the following citation:
 ```
-@InProceedings{ECIR_Tahmasebi24,
+@InProceedings{ECIR_Tahmasebi25,
   author    = {Sahar Tahmasebi, Eric Müller-Budack and Ralph Ewerth},
   booktitle = {European Conference on Information Retrieval, (ECIR) 2025,  Lucca, Italy, April 6-10, 2025},
   title     = {Verifying Cross-modal Entity Consistency in News using Vision-language Models},
@@ -25,36 +25,18 @@ pip install -r requirements.txt
 - To access the original MMG dataset with its images use this [link](https://link.springer.com/chapter/10.1007/978-3-031-28238-6_14).
 
 ## Evaluation
-To run the pipeline and evaluate on datasets, you should run the bash file specific to each experiment and dataset.:
+Each experiment contains its own script to analyze the answers. To run the pipeline and evaluate on datasets, you should run the bash file specific to each experiment and dataset with following commands.:
 ```
-bash eval.sh
+<path_to_experiment>/run_<dataset_name>.sh <basepath_to_experiment> <generate_questions_flag> <generate_answers_flag>
 ```
-each experiment contains his own generate[README.md](..%2FCIKM%2FLVLM4FV%2FREADME.md)d questions from the datasets and script to analize the answers.
-1. experiments without comparative images 
-    1. document verification
-    2. entity verification
-2. with comparative images (single image input models)
-    1. entity verification with single image
-    2. entity verificaiton with multiple images
-3. with comparative images (multi image input models)
-    1. entity verification with single image
-    2. entity verificaiton with multiple images
+for example to run the pipeline on news400_ent dataset without using the evidence images you should run:
+```
+LVLM4CEC/01_without_evidence_images/run_news400.sh LVLM4CEC/01_without_evidence_images/ 1 1
+```
 
+All generated output will be then saved in ./output directory. you can then print the results for specific model by running PrintResults.py
 1.5. output
 All generated output is saved in ./output. 
-
-- Logs
-Contains all logs from fulltest (SLURM log)
-- Model Answers
-    Contains all responses from each model, seperated by experiment and datatset
-- statistics
-    Contains a statistic for each model and mode, seperated by  experiment and datatset
-
-The experiments can be run by the following command
-<path_to_experiment>/run_<dataset>.sh <basepath_to_experiment> <generate_questions> <generate_answers>
-
-To run all all experiments with SLURM, look at ./utils/batch_fulltest.sh
-
 
 ## Credit
 This repository is built by [Sahar Tahmasebi](https://github.com/sahartahmasebi). 
