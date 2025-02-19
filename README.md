@@ -34,9 +34,9 @@ For example, to run the pipeline on the ```news400_ent``` dataset without incorp
 LVLM4CEC/01_without_evidence_images/run_news400.sh LVLM4CEC/01_without_evidence_images/ 1 1
 ```
 
-All generated outputs will be saved in the ```./output directory```. To display the results for a specific model, run:
+All generated outputs, including model predictions and evaluation statistics, will be saved in the ```./output``` directory. To display the results for a specific model and prompt templates, specify the model name using the ```--models argument``` and run:
 ```
-python PrintResults.py
+python PrintResults.py --models <model_name>
 ```
 ## Credit
 This repository is built by [Sahar Tahmasebi](https://github.com/sahartahmasebi). 
